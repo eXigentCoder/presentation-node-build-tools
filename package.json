@@ -2,7 +2,7 @@
   "name": "presentation-node-build-tools",
   "version": "0.0.3",
   "description": "A presentation of node build tools and ecosystem.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "node .",
     "test": "jest",
@@ -45,7 +45,12 @@
     "eslint-config-prettier": "2.9.0",
     "eslint-plugin-node": "5.2.1",
     "eslint-plugin-prettier": "2.5.0",
+    "grunt": "1.0.1",
+    "grunt-eslint": "20.1.0",
+    "gulp": "3.9.1",
+    "gulp-eslint": "4.0.1",
     "jest-cli": "22.1.1",
+    "load-grunt-tasks": "3.5.2",
     "prettier": "1.10.2"
   }
 }

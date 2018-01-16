@@ -3,7 +3,7 @@
 Writing your own code/module is cool and all, but I'm pretty lazy, can't I reuse other peoples code? What if I would like to publish my own code so that it can be reused in future projects?
 
 # Introducing [Node Package Manager (NPM)](https://docs.npmjs.com/getting-started/what-is-npm)!
- 
+
 NPM comes bundled with your node install and is now [the largest package registry in the world!](https://developers.slashdot.org/story/17/01/14/0222245/nodejss-npm-is-now-the-largest-package-registry-in-the-world)
 
 ## Installing Packages
@@ -133,6 +133,29 @@ For example in your `package.json` :
 Then to execute it :
 > `npm run lint`
 
+JavaScript is interpreted, not compiled so but sometimes you still want a "build" phase of the application. So what sorts of tasks would we want to run?
+The logic for what your CI/CD server does should be checked into source control, tasks are ideal for this.
+
+* Minification
+* Obfuscation
+* File concatenation
+* Transpile - Convert from a newer version of ES to an earlier one for browser/Node compatibility
+* Optimisation
+* Check for errors (Lint)
+* Format code (Prettier)
+* Run an application
+* Watch files for changes and then kick off another task such as reboot application
+* Run automated tests (Unit, integration, performance, etc.)
+* Get code coverage
+* Publish (to NPM registry)
+* Deploy to an environment
+* Generate a code complexity report
+* Run any miscellaneous/arbitrary script or binary
+* Update dependencies
+* Check dependencies for vulnerabilities (Snyk)
+* Code generation
+* Data generation
+
 ## Versioning
 
 The `package.json` file is used to keep track of the version number of your project/module. This version number will be used when publishing to the NPM registry. There is a useful command for incrementing this version number from the cli. This is great for use with a build/CI server.
@@ -172,6 +195,20 @@ You can use a specific named scope to refer to a pacakge, this is usually a user
 
 You can also associate a scope with a specific registry to make publishing to different registries easier
 
+# Yarn
+
+I heard Facebook released their own package manger, Yarn, can I use that too? Yup, simply do a `yarn add <nameOfDependency>`. 
+
+![Would you like to know more?](more.png) 
+
 # Grunt
 
+> Not recommended for new projects
+ 
+See the Gruntfile.js in the root
+
 # Gulp
+
+> Not recommended for new projects
+
+See the gulpfile.js in the root

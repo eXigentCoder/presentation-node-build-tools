@@ -28,6 +28,7 @@
         "no-console": ["off"],
         "node/exports-style": ["error", "module.exports"],
         "node/no-unsupported-features": ["off"],
+        "node/no-unpublished-require":["off"],
         "strict": ["error", "global"],
         "prettier/prettier": ["error", {"singleQuote": true, "tabWidth":4, "printWidth":100, "semi":false}]
     }
