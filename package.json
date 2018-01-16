@@ -5,7 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node .",
-    "test": "jest"
+    "test": "jest",
+    "lint": "npm run lint-ci -- --fix",
+    "lint-ci": "eslint \"src/**/*.js\" \"test/**/*.js\" \"config/**/*.js\"",
+    "prettier": "prettier --write --tab-width=4 --single-quote=true --print-width=100 --no-semi \"{src,test}/**/*.js\"",
+    "patch": "npm version patch && npm publish",
+    "minor": "npm version minor && npm publish",
+    "major": "npm version major && npm publish",
+    "preversion": "npm run prettier && npm run lint && npm t && git add . && git commit -m \"adding build artifacts\"",
+    "postpublish": "git push origin master --follow-tags"
   },
   "repository": {
     "type": "git",
@@ -33,6 +41,11 @@
     "moment": "2.20.1"
   },
   "devDependencies": {
-    "jest-cli": "22.1.1"
+    "eslint": "4.15.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-plugin-prettier": "2.5.0",
+    "jest-cli": "22.1.1",
+    "prettier": "1.10.2"
   }
 }

@@ -140,6 +140,7 @@ The `package.json` file is used to keep track of the version number of your proj
 > `npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]` 
 
 If you run the above command in a directory that is a git repo it will also create a git tag for you (excluding the from-git option) so that it's easy to tie up the npm version to the git version.
+
 ## Publishing to NPM
 
 If you find you have a module you would like to publish to NPM either publicly or privately this is fairly straight forward.
@@ -154,9 +155,22 @@ If you find you have a module you would like to publish to NPM either publicly o
     You will need to provide your npm username, password an email address. You can create an account by registering on the [NPM Site](https://www.npmjs.com/signup)
 1. When you are ready to publish your package, open a terminal window in the root directory of the project where your `package.json` file is and type
     > `npm publish`
-1. If you accidentally published, you can remove that  
+1. If you accidentally published, you can remove that by typing
+    > `npm unpublish`
     
-There are a few best practices that you should follow when publishing
+# Scoped packages
+
+You can use a specific named scope to refer to a pacakge, this is usually a username/organisation name. It helps group packages together and helps prevent people from accidentally installing a malicious third party package. To do so, you simply need to add the scope before the package name wherever you are using it e.g.
+* "name": "@encentivize/presentation-node-build-tools"
+* `npm install @encentivize/presentation-node-build-tools`
+* ``` 
+    "dependencies": {
+       "@encentivize/presentation-node-build-tools": "0.0.1"
+     }
+    ```
+* `require('@encentivize/presentation-node-build-tools')`
+
+You can also associate a scope with a specific registry to make publishing to different registries easier
 
 # Grunt
 

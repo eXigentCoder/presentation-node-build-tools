@@ -10,8 +10,8 @@
     * [*] adduser
     * [*] whoami
     * [*] logout
-    * [] publish
-    * [] unpublish (rules for this)
+    * [*] publish
+    * [*] unpublish (rules for this)
     * [*] Specific versions
     * [] @scopes
 * Grunt
