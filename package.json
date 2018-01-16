@@ -12,7 +12,7 @@
     "patch": "npm version patch && npm publish",
     "minor": "npm version minor && npm publish",
     "major": "npm version major && npm publish",
-    "preversion": "npm run prettier && npm run lint && npm t && git add . && git commit -m \"adding build artifacts\"",
+    "preversion": "npm run prettier && npm run lint && npm t",
     "postpublish": "git push origin master --follow-tags"
   },
   "repository": {
