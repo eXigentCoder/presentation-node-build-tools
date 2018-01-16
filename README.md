@@ -139,6 +139,7 @@ The `package.json` file is used to keep track of the version number of your proj
 
 > `npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]` 
 
+If you run the above command in a directory that is a git repo it will also create a git tag for you (excluding the from-git option) so that it's easy to tie up the npm version to the git version.
 ## Publishing to NPM
 
 If you find you have a module you would like to publish to NPM either publicly or privately this is fairly straight forward.
