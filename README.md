@@ -199,7 +199,7 @@ You can also associate a scope with a specific registry to make publishing to di
 
 I heard Facebook released their own package manger, Yarn, can I use that too? Yup, simply do a `yarn add <nameOfDependency>`. 
 
-![Would you like to know more?](more.png) 
+[![Would you like to know more?](more.png) ](https://yarnpkg.com/en/)
 
 # Grunt
 
