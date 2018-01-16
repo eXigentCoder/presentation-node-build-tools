@@ -1,0 +1,38 @@
+{
+  "name": "presentation-node-build-tools",
+  "version": "0.0.1",
+  "description": "A presentation of node build tools and ecosystem.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eXigentCoder/presentation-node-build-tools.git"
+  },
+  "keywords": [
+    "build",
+    "tools"
+  ],
+  "author": "Ryan Kotzen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eXigentCoder/presentation-node-build-tools/issues"
+  },
+  "homepage": "https://github.com/eXigentCoder/presentation-node-build-tools#readme",
+  "jest": {
+    "testRegex": "/test/.*",
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test"
+    ]
+  },
+  "dependencies": {
+    "moment": "2.20.1"
+  },
+  "devDependencies": {
+    "jest-cli": "22.1.1"
+  }
+}
