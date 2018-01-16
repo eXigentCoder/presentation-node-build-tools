@@ -1,6 +1,6 @@
 {
   "name": "presentation-node-build-tools",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A presentation of node build tools and ecosystem.",
   "main": "index.js",
   "scripts": {
