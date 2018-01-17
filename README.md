@@ -137,6 +137,8 @@ Often an **anti-pattern** so ensure you are using this correctly.
 * * *
 ## Scripts
 
+![script](images/script.jpg)
+
 `npm run <nameOfScript>` - Runs a script defined in your package.json. No need for gulp/grunt!
 For example in your `package.json` :
 
@@ -192,6 +194,8 @@ The logic for what your CI/CD server does should be checked into source control,
 
 ## Versioning
 
+![versions](images/versions.jpg)
+
 The `package.json` file is used to keep track of the version number of your project/module. This version number will be used when publishing to the NPM registry. There is a useful command for incrementing this version number from the cli. This is great for use with a build/CI server.
 
 > `npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]` 
@@ -201,6 +205,8 @@ If you run the above command in a directory that is a git repo it will also crea
 * * *
 
 ## Publishing to NPM
+
+![publishing](images/publishing.jpg)
 
 If you find you have a module you would like to publish to NPM either publicly or privately this is fairly straight forward.
 
@@ -219,6 +225,8 @@ If you find you have a module you would like to publish to NPM either publicly o
 
 * * *
 # Scoped packages
+
+![scope](images/scope.jpg)
 
 You can use a specific named scope to refer to a pacakge, this is usually a username/organisation name. It helps group packages together and helps prevent people from accidentally installing a malicious third party package. To do so, you simply need to add the scope before the package name wherever you are using it e.g.
 * "name": "@encentivize/presentation-node-build-tools"
@@ -240,8 +248,8 @@ I heard Facebook released their own package manger, Yarn, can I use that too? Yu
 [![Would you like to know more?](images/more.png) ](https://yarnpkg.com/en/)
 
 * * *
-
 # Grunt
+![grunt](images/grunt.png)
 
 > Not recommended for new projects
  
@@ -249,7 +257,7 @@ See the Gruntfile.js in the root
 
 * * *
 # Gulp
-
+![gulp](images/gulp.jpg)
 > Not recommended for new projects
 
 See the gulpfile.js in the root
