@@ -1,21 +1,30 @@
 # Javascript Build Tools
+[Ryan Kotzen]()
+
+* * *
 
 Writing your own code/module is cool and all, but I'm pretty lazy, can't I reuse other peoples code? What if I would like to publish my own code so that it can be reused in future projects?
+![Construction](images/construction.jpg)
+
+* * *
 
 # Introducing [Node Package Manager (NPM)](https://docs.npmjs.com/getting-started/what-is-npm)!
 
-NPM comes bundled with your node install and is now [the largest package registry in the world!](https://developers.slashdot.org/story/17/01/14/0222245/nodejss-npm-is-now-the-largest-package-registry-in-the-world)
+![NPM](images/npm.png)
 
+NPM comes bundled with your node install and is now [the largest package registry in the world!](https://developers.slashdot.org/story/17/01/14/0222245/nodejss-npm-is-now-the-largest-package-registry-in-the-world)
+* * *
 ## Installing Packages
 
+![install](images/install.jpg)
 Once you have found the package you are looking for using something like [npms](npms.io) or [npmjs](npmjs.com) simply install it by typing:
 > `npm install <nameOfDependency>` or `npm i <nameOfDependency>`
 
-You can also install a dependency at a specific version:
-> `npm install <nameOfDependency>@<semVer>`
-
 You can also search for packages using the cli itself:
 > `npm search [searchTerms]`
+
+You can also install a dependency at a specific version:
+> `npm install <nameOfDependency>@<semVer>`
 
 Once the install is finished, you will see you now have a `node_modules` folder in the route of your project. This is where all node dependencies live. This folder can get quite large so you don't want to check it in.
 
@@ -23,23 +32,11 @@ Once the install is finished, you will see you now have a `node_modules` folder 
 
 Enter the `package.json` file! This is a simple file that tracks our dependencies, their versions and does a fair bit of other awesome stuff that we will get into later. We could create this file manually for us, but there is a built in utility to do it, `npm init`. Before we run this command, lets tell npm a bit about ourselves.
 
-## Uninstalling Packages
-
-This command also observes the save flag stored in `.npmrc`
-> `npm uninstall <nameOfDependency>`
-
-## Set up your npm defaults
-
-> Source: http://iamsim.me/set-your-npm-init-defaults/
-
-* `npm config set init.author.name "Ryan Kotzen"`
-* `npm config set init.author.email potz666@gmail.com`
-* `npm config set init.author.url http://blog.exigentcoder.com`
-* `npm config set init.license MIT`
-
-These generally get saved to your `<userFolder>/.npmrc` file. You may also notice that this project has its own `.npmrc` file which will override your user settings. For more info, [see this page](https://docs.npmjs.com/files/npmrc).
+* * *
 
 ## Create your `package.json` file
+
+![install](images/package.jpg)
 
 Go ahead and type:
 
@@ -86,13 +83,49 @@ Note that you can also install multiple dependencies at the same time. E.g.:
 This is all good and well, but how do I use a dependency once it has been installed?
 See index.js
 
+* * *
+
+## Set up your npm defaults
+
+> Source: http://iamsim.me/set-your-npm-init-defaults/
+
+* `npm config set init.author.name "Ryan Kotzen"`
+* `npm config set init.author.email potz666@gmail.com`
+* `npm config set init.author.url http://blog.exigentcoder.com`
+* `npm config set init.license MIT`
+
+These generally get saved to your `<userFolder>/.npmrc` file. You may also notice that this project has its own `.npmrc` file which will override your user settings. For more info, [see this page](https://docs.npmjs.com/files/npmrc).
+
+* * *
+
+## Uninstalling Packages
+
+![install](images/uninstall.jpg)
+
+Sometimes things go wrong or you stop using a component and need it removed. This command also observes the save flag stored in `.npmrc`
+> `npm uninstall <nameOfDependency>`
+
+* * *
+## Dev Dependencies
+
+![Dev](images/dev.jpg)
+
+Add the --save-dev flag e.g. `npm i mocha --save-dev`. This is for the packages you use during dev/ci/cd but which do not get installed to production. Examples include linting and testing.
+
+* * *
+
 ## Shrinkwrap - make mine to go!
 
+![shrinkwrap](images/shrinkwrap.jpg)
+
 > Note that this is only required when using an npm version lower than 5.x. Newer versions use a package-lock.json file.
- 
+
 Once you are ready to deploy your app type `npm shrinkwrap` and this will freeze all of your dependencies, and their dependencies, and their dependencies, and their dependencies, etc and write it to the `npm-shrinkwrap.json` file in the root of your app. When your server hosting node does a `npm install`, this file will be used to install the exact dependencies you had on your dev/ci/cd box.
 
+* * *
 ## Global modules
+
+![global](images/global.jpg)
 
 Add the -g flag e.g. `npm i loadtest -g`. Often times this will add a new .cmd or bash command, hence why it should be in your path variables.
 
@@ -101,20 +134,7 @@ The linux location depends on if you are using `nvm` or not.
 
 Often an **anti-pattern** so ensure you are using this correctly.
 
-## Dev Dependencies
-
-Add the --save-dev flag e.g. `npm i mocha --save-dev`. This is for the packages you use during dev/ci/cd but which do not get installed to production. Examples include linting and testing.
-
-
-## Extra commands
-
-* `npm outdated` - list outdated packages.
-* `npm update` - Update packages, see the `npm-check` package.
-* `npm dedupe` - Removes duplicate packages from the node-modules folder based on wildcards. See https://docs.npmjs.com/cli/dedupe.
-* `npm link` - Used for modules development, allows you to link a specific module to a folder on your pc.
-* `npm prune --production` - Removes dev dependencies.
-* `npm t` | `npm test` - Runs the test command specified in your scripts of your package.json.
-
+* * *
 ## Scripts
 
 `npm run <nameOfScript>` - Runs a script defined in your package.json. No need for gulp/grunt!
@@ -156,6 +176,20 @@ The logic for what your CI/CD server does should be checked into source control,
 * Code generation
 * Data generation
 
+* * *
+## Extra commands
+
+![extra](images/extra.jpg)
+
+* `npm outdated` - list outdated packages.
+* `npm update` - Update packages, see the `npm-check` package.
+* `npm dedupe` - Removes duplicate packages from the node-modules folder based on wildcards. See https://docs.npmjs.com/cli/dedupe.
+* `npm link` - Used for modules development, allows you to link a specific module to a folder on your pc.
+* `npm prune --production` - Removes dev dependencies.
+* `npm t` | `npm test` - Runs the test command specified in your scripts of your package.json.
+
+* * *
+
 ## Versioning
 
 The `package.json` file is used to keep track of the version number of your project/module. This version number will be used when publishing to the NPM registry. There is a useful command for incrementing this version number from the cli. This is great for use with a build/CI server.
@@ -163,6 +197,8 @@ The `package.json` file is used to keep track of the version number of your proj
 > `npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]` 
 
 If you run the above command in a directory that is a git repo it will also create a git tag for you (excluding the from-git option) so that it's easy to tie up the npm version to the git version.
+
+* * *
 
 ## Publishing to NPM
 
@@ -180,7 +216,8 @@ If you find you have a module you would like to publish to NPM either publicly o
     > `npm publish`
 1. If you accidentally published, you can remove that by typing
     > `npm unpublish`
-    
+
+* * *
 # Scoped packages
 
 You can use a specific named scope to refer to a pacakge, this is usually a username/organisation name. It helps group packages together and helps prevent people from accidentally installing a malicious third party package. To do so, you simply need to add the scope before the package name wherever you are using it e.g.
@@ -195,11 +232,14 @@ You can use a specific named scope to refer to a pacakge, this is usually a user
 
 You can also associate a scope with a specific registry to make publishing to different registries easier
 
+* * *
 # Yarn
 
 I heard Facebook released their own package manger, Yarn, can I use that too? Yup, simply do a `yarn add <nameOfDependency>`. 
 
-[![Would you like to know more?](more.png) ](https://yarnpkg.com/en/)
+[![Would you like to know more?](images/more.png) ](https://yarnpkg.com/en/)
+
+* * *
 
 # Grunt
 
@@ -207,6 +247,7 @@ I heard Facebook released their own package manger, Yarn, can I use that too? Yu
  
 See the Gruntfile.js in the root
 
+* * *
 # Gulp
 
 > Not recommended for new projects
