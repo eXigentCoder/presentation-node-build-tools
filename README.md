@@ -1,10 +1,10 @@
-# Javascript Build Tools
-[Ryan Kotzen]()
+# JavaScript Build Tools
+By [Ryan Kotzen | @eXigentCoder](https://twitter.com/eXigentCoder)
 
-* * *
+Information on the JavaScript build ecosystem.
+![Construction](images/construction.jpg)
 
 Writing your own code/module is cool and all, but I'm pretty lazy, can't I reuse other peoples code? What if I would like to publish my own code so that it can be reused in future projects?
-![Construction](images/construction.jpg)
 
 * * *
 

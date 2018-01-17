@@ -60,3 +60,4 @@ typings/
 # intellij files
 .idea/*
 
+/README.html
